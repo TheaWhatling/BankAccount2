@@ -92,13 +92,38 @@ namespace BankAccount2
             return bankaccountnum;
         }
 
-        //public void print(string name, int balance, string address, int bankaccountnum)
-        //{
-        //    Console.WriteLine("name: " + name);
-        //    Console.WriteLine("balance: " + balance);
-        //    Console.WriteLine("address: " + address);
-        //    Console.WriteLine("bank account number: " + bankaccountnum);
-        //}
+        public void deposit(int amount2)
+        {
+            if (amount2 <= 0)
+            {
+                Console.WriteLine("Amount of deposit must be positive");
+            }
+            else balance = balance + amount2;
+            
+        }
+
+        public int getdeposit()
+        {
+            return balance;
+        }
+
+        public void withdraw(int amount1) 
+        {
+            if (amount1 <= 0)
+            {
+                Console.WriteLine("Amount of withdrawal must be positive");
+            }
+            if (balance - amount1 < 0)
+            {
+                Console.WriteLine("Not sufficient funds for this withdrawal");
+            }
+            else balance = balance - amount1;
+            
+        }
+        public int getwithdraw()
+        {
+            return balance;
+        }
 
 
 

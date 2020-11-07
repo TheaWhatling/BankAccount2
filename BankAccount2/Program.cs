@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography.X509Certificates;
 
 namespace BankAccount2
 {
@@ -6,7 +7,13 @@ namespace BankAccount2
     {
         static void Main(string[] args)
         {
-            int t = 0;
+            
+            string a;
+            int b;
+            string c;
+            int d;
+
+
             //Create a bank account class, attributes should include name, balance, address and bankaccount number.
 
             //Create get set methods, and withdraw, deposit and print statement to screen message.
@@ -37,24 +44,47 @@ namespace BankAccount2
                 enteredbankaccountnum = Convert.ToInt32(Console.ReadLine());
                 s[x].setbankaccountnum(enteredbankaccountnum);
 
-                t = x;
+                
+
+                a = s[x].getname();
+                b = s[x].getbalance();
+                c = s[x].getaddress();
+                d = s[x].getbankaccountnum();
 
             }
 
+            
             Console.WriteLine("information: ");
-            Console.WriteLine("name: " + s[t]getname);
-            Console.WriteLine("balance: " + s[t]getbalance);
-            Console.WriteLine("address: " + s[t]getaddress);
-            Console.WriteLine("bank account number: " + s[t]getbankaccountnum);
+            Console.WriteLine("name: " + a);
+            Console.WriteLine("balance: " + b);
+            Console.WriteLine("address: " + c);
+            Console.WriteLine("bank account number: " + d);
 
-            //Console.WriteLine(s[t].print());
+            string answer1;
+            Console.WriteLine("would you like to make a withdrawal? yes/no");
+            answer1 = Console.ReadLine();
+            if (answer1 == "yes")
+            {
+                int amount1;
+                Console.WriteLine("How much?");
+                amount1 = Convert.ToInt32(Console.ReadLine());
+                s[x].withdraw(amount1);
+            }
 
-            //int hoursinput = 0;
-            //Console.WriteLine("enter the number of hours " + s[x].getName() + " has worked"); // change so v can change 
-            //hoursinput = Convert.ToInt32(Console.ReadLine());
-            //s[x].learn(hoursinput);
+            Console.WriteLine("your new balance is: " + s[x]getbalance());
 
+            string answer2;
+            Console.WriteLine("would you like to make a deposit? yes/no");
+            answer2 = Console.ReadLine();
+            if (answer2 == "yes")
+            {
+                int amount2;
+                Console.WriteLine("How much?");
+                amount2 = Convert.ToInt32(Console.ReadLine());
+                s[x].deposit(amount2);
+            }
 
+            Console.WriteLine("your new balance is: " + s[x]getdeposit());
         }
     }
 }
