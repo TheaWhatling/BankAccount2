@@ -11,7 +11,7 @@ namespace BankAccount2
         private int balance;
         private string address;
         private int bankaccountnum;
-
+        private static int accountsSoFar = 0;
         public BankAccount()
         {
             name = "test";
@@ -101,12 +101,7 @@ namespace BankAccount2
             else balance = balance + amount2;
             
         }
-
-        public int getdeposit()
-        {
-            return balance;
-        }
-
+      
         public void withdraw(int amount1) 
         {
             if (amount1 <= 0)
@@ -120,13 +115,14 @@ namespace BankAccount2
             else balance = balance - amount1;
             
         }
-        public int getwithdraw()
+
+        public void print()
         {
-            return balance;
+            Console.WriteLine("information: ");
+            Console.WriteLine("name: " + name);
+            Console.WriteLine("balance: " + balance);
+            Console.WriteLine("address: " + address);
+            Console.WriteLine("bank account number: " + bankaccountnum);
         }
-
-
-
-
     }
 }

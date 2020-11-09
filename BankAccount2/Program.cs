@@ -8,10 +8,10 @@ namespace BankAccount2
         static void Main(string[] args)
         {
             
-            string a;
-            int b;
-            string c;
-            int d;
+            //string a;
+            //int b;
+            //string c;
+            //int d;
 
 
             //Create a bank account class, attributes should include name, balance, address and bankaccount number.
@@ -46,19 +46,19 @@ namespace BankAccount2
 
                 
 
-                a = s[x].getname();
-                b = s[x].getbalance();
-                c = s[x].getaddress();
-                d = s[x].getbankaccountnum();
+                //a = s[x].getname();
+                //b = s[x].getbalance();
+                //c = s[x].getaddress();
+                //d = s[x].getbankaccountnum();
 
             }
 
             
-            Console.WriteLine("information: ");
-            Console.WriteLine("name: " + a);
-            Console.WriteLine("balance: " + b);
-            Console.WriteLine("address: " + c);
-            Console.WriteLine("bank account number: " + d);
+            //Console.WriteLine("information: ");
+            //Console.WriteLine("name: " + a);
+            //Console.WriteLine("balance: " + b);
+            //Console.WriteLine("address: " + c);
+            //Console.WriteLine("bank account number: " + d);
 
             string answer1;
             Console.WriteLine("would you like to make a withdrawal? yes/no");
@@ -71,7 +71,7 @@ namespace BankAccount2
                 s[x].withdraw(amount1);
             }
 
-            Console.WriteLine("your new balance is: " + s[x]getbalance());
+            Console.WriteLine("your new balance is: " + s[x].getbalance());
 
             string answer2;
             Console.WriteLine("would you like to make a deposit? yes/no");
@@ -84,8 +84,14 @@ namespace BankAccount2
                 s[x].deposit(amount2);
             }
 
-            Console.WriteLine("your new balance is: " + s[x]getdeposit());
+            Console.WriteLine("your new balance is: " + s[x].getbalance());
+
+            Console.WriteLine("information: " + b.print());
         }
     }
 }
- 
+/*
+ You could write a method in your bank account class called printDetails() that just printout a receipt.  You'd then call it like this b.printDetails().
+
+In your main code you are using the for loop variable X outside of the for loop you define it in. X only has scope between the for loop brackets it is declared in.
+    */
