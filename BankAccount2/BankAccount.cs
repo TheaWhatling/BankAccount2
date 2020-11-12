@@ -12,12 +12,14 @@ namespace BankAccount2
         private string address;
         private int bankaccountnum;
         private static int accountsSoFar = 0;
+
         public BankAccount()
         {
             name = "test";
             balance = 0;
             address = "London";
-            bankaccountnum = 0;
+            bankaccountnum = accountsSoFar;
+            accountsSoFar ++;
         }
 
         public BankAccount(string name)
@@ -25,7 +27,8 @@ namespace BankAccount2
             this.name = name;
             this.balance = 0;
             this.address = "London";
-            this.bankaccountnum = 0;
+            this.bankaccountnum = accountsSoFar;
+            accountsSoFar ++;
         }
 
         public BankAccount(string name, int balance)
@@ -33,7 +36,8 @@ namespace BankAccount2
             this.name = name;
             this.balance = balance;
             this.address = "London";
-            this.bankaccountnum = 0;
+            this.bankaccountnum = accountsSoFar;
+            accountsSoFar ++;
         }
 
         public BankAccount(string name, int balance, string address)
@@ -42,14 +46,13 @@ namespace BankAccount2
             this.balance = balance;
             this.address = address;
             this.bankaccountnum = 0;
+            accountsSoFar ++;
         }
 
-        public BankAccount(string name, int balance, string address, int bankaccountnum)
+
+        public static void accountsSorFar(int v)
         {
-            this.name = name;
-            this.balance = balance;
-            this.address = address;
-            this.bankaccountnum = bankaccountnum;
+            accountsSoFar = v;
         }
 
         public void setname(string name) 

@@ -22,27 +22,23 @@ namespace BankAccount2
 
             for (int x = 0; x < 10; x = x + 1)
             {
-                s[x] = new BankAccount();
+                
 
                 string enteredname = " ";
                 Console.WriteLine("please enter name");
                 enteredname = Console.ReadLine();
-                s[x].setname(enteredname);
+                
 
                 int enteredbalance = 0;
                 Console.WriteLine("please enter balance");
                 enteredbalance = Convert.ToInt32(Console.ReadLine());
-                s[x].setbalance(enteredbalance);
+                
 
                 string enteredaddress = " ";
                 Console.WriteLine("please enter your address/city");
                 enteredaddress = Console.ReadLine();
-                s[x].setaddress(enteredaddress);
-
-                int enteredbankaccountnum = 0;
-                Console.WriteLine("please enter your bankaccount number");
-                enteredbankaccountnum = Convert.ToInt32(Console.ReadLine());
-                s[x].setbankaccountnum(enteredbankaccountnum);
+               
+                s[x] = new BankAccount(enteredname, enteredbalance, enteredaddress);
 
                 
 
@@ -52,13 +48,6 @@ namespace BankAccount2
                 //d = s[x].getbankaccountnum();
 
             }
-
-            
-            //Console.WriteLine("information: ");
-            //Console.WriteLine("name: " + a);
-            //Console.WriteLine("balance: " + b);
-            //Console.WriteLine("address: " + c);
-            //Console.WriteLine("bank account number: " + d);
 
             string answer1;
             Console.WriteLine("would you like to make a withdrawal? yes/no");
@@ -90,8 +79,5 @@ namespace BankAccount2
         }
     }
 }
-/*
- You could write a method in your bank account class called printDetails() that just printout a receipt.  You'd then call it like this b.printDetails().
-
-In your main code you are using the for loop variable X outside of the for loop you define it in. X only has scope between the for loop brackets it is declared in.
-    */
+// In your main code you are using the for loop variable X outside of the for loop you define it in. X only has scope between the for loop brackets it is declared in.
+    
