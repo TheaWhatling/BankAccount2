@@ -8,11 +8,6 @@ namespace BankAccount2
         static void Main(string[] args)
         {
             
-            //string a;
-            //int b;
-            //string c;
-            //int d;
-
 
             //Create a bank account class, attributes should include name, balance, address and bankaccount number.
 
@@ -21,13 +16,12 @@ namespace BankAccount2
             BankAccount[] s = new BankAccount[10];
 
             for (int x = 0; x < 10; x = x + 1)
-            {
-                
+            {             
 
                 string enteredname = " ";
                 Console.WriteLine("please enter name");
                 enteredname = Console.ReadLine();
-                
+             
 
                 int enteredbalance = 0;
                 Console.WriteLine("please enter balance");
@@ -37,15 +31,9 @@ namespace BankAccount2
                 string enteredaddress = " ";
                 Console.WriteLine("please enter your address/city");
                 enteredaddress = Console.ReadLine();
+
                
                 s[x] = new BankAccount(enteredname, enteredbalance, enteredaddress);
-
-                
-
-                //a = s[x].getname();
-                //b = s[x].getbalance();
-                //c = s[x].getaddress();
-                //d = s[x].getbankaccountnum();
 
             }
 
@@ -57,10 +45,11 @@ namespace BankAccount2
                 int amount1;
                 Console.WriteLine("How much?");
                 amount1 = Convert.ToInt32(Console.ReadLine());
-                s[x].withdraw(amount1);
+                s[x].withdraw(amount1);                           //acountSoFar ?
             }
 
             Console.WriteLine("your new balance is: " + s[x].getbalance());
+
 
             string answer2;
             Console.WriteLine("would you like to make a deposit? yes/no");
@@ -75,7 +64,14 @@ namespace BankAccount2
 
             Console.WriteLine("your new balance is: " + s[x].getbalance());
 
-            Console.WriteLine("information: " + b.print());
+            string answer3;
+            Console.WriteLine("would you like to see your statement? yes/no");
+            answer3 = Console.ReadLine();
+            if (answer3 == "yes")
+            {
+                Console.WriteLine(b.print());
+            }
+            
         }
     }
 }

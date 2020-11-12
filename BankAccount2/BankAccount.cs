@@ -50,9 +50,9 @@ namespace BankAccount2
         }
 
 
-        public static void accountsSorFar(int v)
+        public static void accountsSoFar(int v)
         {
-            accountsSoFar = v;
+            accountsSoFar = v; 
         }
 
         public void setname(string name) 
